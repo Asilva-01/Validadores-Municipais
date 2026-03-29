@@ -1,0 +1,67 @@
+[
+  {
+    "cpf_cnpj_prestador": "50.093.495/7068-01",
+    "numero_nota": "1234",
+    "serie_nota": "1",
+    "subsérie_nota": "0",
+    "dia_emissao": "15/03/2026",
+    "codigo_servico": "1701",
+    "situacao_nota": "t",
+    "valor_servico": "1000,00",
+    "ccm_tomador": "123456789",
+    "tipo_nota": "T",
+    "aliquota_simples": "3,00"
+  },
+  {
+    "cpf_cnpj_prestador": "60.156.511/6092-98",
+    "numero_nota": "1235",
+    "serie_nota": "1",
+    "subsérie_nota": "0",
+    "dia_emissao": "15/03/2026",
+    "codigo_servico": "1701",
+    "situacao_nota": "r",
+    "valor_servico": "2.500,50",
+    "ccm_tomador": "987654321",
+    "tipo_nota": "T",
+    "aliquota_simples": ""
+  },
+  {
+    "cpf_cnpj_prestador": "69.939.120/4567-10",
+    "numero_nota": "1236",
+    "serie_nota": "2",
+    "subsérie_nota": "1",
+    "dia_emissao": "16/03/2026",
+    "codigo_servico": "1706",
+    "situacao_nota": "i",
+    "valor_servico": 500.00,
+    "ccm_tomador": "111222333",
+    "tipo_nota": "F",
+    "aliquota_simples": ""
+  },
+  {
+    "cpf_cnpj_prestador": "51.530.500/4656-40",
+    "numero_nota": "1237",
+    "serie_nota": "1",
+    "subsérie_nota": "0",
+    "dia_emissao": "16/03/2026",
+    "codigo_servico": "1701",
+    "situacao_nota": "n",
+    "valor_servico": "1500,75",
+    "ccm_tomador": "444555666",
+    "tipo_nota": "R",
+    "aliquota_simples": ""
+  },
+  {
+    "cpf_cnpj_prestador": "73.683.478/0478-77",
+    "numero_nota": "1238",
+    "serie_nota": "1",
+    "subsérie_nota": "0",
+    "dia_emissao": "17/03/2026",
+    "codigo_servico": "1701",
+    "situacao_nota": "t",
+    "valor_servico": "3.200,00",
+    "ccm_tomador": "777888999",
+    "tipo_nota": "E",
+    "aliquota_simples": "5,00"
+  }
+]

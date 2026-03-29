@@ -1,0 +1,150 @@
+{
+  "_schema": {
+    "description": "Configuracoes por municipio para integracao SIGISS/SIGCORP",
+    "version": "1.0",
+    "last_updated": "2026-03-29"
+  },
+  "municipios": {
+    "Itapira-SP": {
+      "codigo": "352260",
+      "uf": "SP",
+      "nome": "Itapira",
+      "sistema_sigcorp": true,
+      "configuracoes": {
+        "encoding": "latin-1",
+        "separador": ";",
+        "formato_data": "DD/MM/AAAA",
+        "casas_decimais": 2,
+        "separador_decimal": ",",
+        "cabecalho_obrigatorio": false,
+        "rodape_obrigatorio": false,
+        "registro_fixo": false
+      },
+      "campos_obrigatorios": [
+        "cpf_cnpj_prestador",
+        "numero_nota",
+        "codigo_servico",
+        "situacao_nota",
+        "valor_servico"
+      ],
+      "situacoes_permitidas": ["t", "r", "i", "n"],
+      "tipos_nota_permitidos": ["T", "F", "J", "R", "E"],
+      "aliquotas": {
+        "minima": 2.0,
+        "maxima": 5.0,
+        "padrao": 3.0
+      },
+      "codigos_servico": {
+        "tipo": "numerico",
+        "tamanho": 4,
+        "obrigatorio": true
+      },
+      "validacoes_adicionais": [
+        "cnpj_prestador_valido",
+        "ccm_tomador_valido_sp"
+      ],
+      "observacoes": "Municipio utiliza sistema SIGCORP/SIGISS versao padrao. Valores devem usar virgula como separador decimal."
+    },
+    "Mogi Mirim-SP": {
+      "codigo": "353060",
+      "uf": "SP",
+      "nome": "Mogi Mirim",
+      "sistema_sigcorp": true,
+      "configuracoes": {
+        "encoding": "latin-1",
+        "separador": ";",
+        "formato_data": "DD/MM/AAAA",
+        "casas_decimais": 2,
+        "separador_decimal": ",",
+        "cabecalho_obrigatorio": false,
+        "rodape_obrigatorio": false,
+        "registro_fixo": false
+      },
+      "campos_obrigatorios": [
+        "cpf_cnpj_prestador",
+        "numero_nota",
+        "codigo_servico",
+        "situacao_nota",
+        "valor_servico",
+        "tipo_nota"
+      ],
+      "situacoes_permitidas": ["t", "r", "i", "n"],
+      "tipos_nota_permitidos": ["T", "F", "J", "R", "E"],
+      "aliquotas": {
+        "minima": 2.0,
+        "maxima": 5.0,
+        "padrao": 3.0
+      },
+      "codigos_servico": {
+        "tipo": "numerico",
+        "tamanho": 4,
+        "obrigatorio": true
+      },
+      "validacoes_adicionais": [
+        "cnpj_prestador_valido",
+        "ccm_tomador_valido_sp"
+      ],
+      "observacoes": "Municipio utiliza sistema SIGCORP/SIGISS. Exige informacao do tipo de nota."
+    },
+    "Chapeco-SC": {
+      "codigo": "420420",
+      "uf": "SC",
+      "nome": "Chapeco",
+      "sistema_sigcorp": true,
+      "configuracoes": {
+        "encoding": "utf-8",
+        "separador": ";",
+        "formato_data": "DD/MM/AAAA",
+        "casas_decimais": 2,
+        "separador_decimal": ",",
+        "cabecalho_obrigatorio": false,
+        "rodape_obrigatorio": false,
+        "registro_fixo": false
+      },
+      "campos_obrigatorios": [
+        "cpf_cnpj_prestador",
+        "numero_nota",
+        "codigo_servico",
+        "situacao_nota",
+        "valor_servico",
+        "ccm_tomador"
+      ],
+      "situacoes_permitidas": ["t", "r", "i", "n"],
+      "tipos_nota_permitidos": ["T", "F", "J", "R", "E"],
+      "aliquotas": {
+        "minima": 2.0,
+        "maxima": 5.0,
+        "padrao": 2.0
+      },
+      "codigos_servico": {
+        "tipo": "numerico",
+        "tamanho": 4,
+        "obrigatorio": true
+      },
+      "validacoes_adicionais": [
+        "cnpj_prestador_valido",
+        "ccm_tomador_valido_sc"
+      ],
+      "observacoes": "Municipio de Santa Catarina. CCM do tomador eh obrigatorio e segue regras de SC."
+    }
+  },
+  "regras_gerais": {
+    "situacao_nota": {
+      "t": "Tributada",
+      "r": "Retida",
+      "i": "Isenta",
+      "n": "Nao Tributada"
+    },
+    "tipo_nota": {
+      "T": "Talao",
+      "F": "Formulario",
+      "J": "Jogo Solto",
+      "R": "Recibo",
+      "E": "NFe"
+    },
+    "formato_cnpj": "##.###.###/####-##",
+    "formato_cpf": "###.###.###-##",
+    "formato_ccm_sp": "#########/####",
+    "formato_ccm_sc": "#########"
+  }
+}
