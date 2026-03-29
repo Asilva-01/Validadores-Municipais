@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTA JOSEENE - CAMPINAS -SP | Validador</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --bg-dark: #0f172a;
+            --panel-bg: rgba(30, 41, 59, 0.7);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 400px),
+                              radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent 400px);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .upload-card {
+            background: var(--panel-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .upload-card:hover, .upload-card.dragover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.3);
+            border-color: var(--primary);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Compacted Mode For Results */
+        .upload-card.compact {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+        .upload-card.compact .upload-icon {
+            display: none;
+        }
+        .upload-card.compact p {
+            display: none;
+        }
+        .upload-card.compact h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0 !important;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover { background: var(--primary-hover); }
+        .btn:active { transform: scale(0.98); }
+        .btn:disabled { background: var(--text-muted); cursor: not-allowed; opacity: 0.7; }
+
+        .loader {
+            display: none;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Dashboard Ocorrencias */
+        .dashboard {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--panel-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--success);
+            margin-bottom: 1.5rem;
+        }
+
+        .status-header.has-errors { border-left-color: var(--danger); }
+        
+        .status-title { font-size: 1.5rem; font-weight: 600; }
+        
+        .stats { display:flex; gap: 2rem; }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--text-light); }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;}
+
+        .error-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .error-card {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .error-card:hover { background: rgba(239, 68, 68, 0.1); }
+
+        .error-badge {
+            background: var(--danger);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .error-details h3 { margin-bottom: 0.5rem; font-size: 1.1rem; color: #fca5a5; }
+        .error-details p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+        .error-details .err-val {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d8b4fe;
+            margin-top: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NOTA JOSEENE - CAMPINAS -SP</h1>
+        <p class="subtitle">Integração Posicional e Validação Oficial</p>
+    </header>
+
+    <div class="container">
+        <label for="fileInput" class="upload-card" id="dropZone">
+            <span class="upload-icon">📄</span>
+            <h2 style="margin-bottom: 1rem;">Arraste o arquivo TXT ou Clique Aqui</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Arquivos no formato Campinas (Registros H e T com 2955 colunas)</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+                <span class="btn" id="uploadBtn">Selecionar Arquivo</span>
+                <div class="loader" id="loader"></div>
+            </div>
+            <input type="file" id="fileInput" accept=".txt">
+        </label>
+
+        <div class="dashboard" id="dashboard">
+            <div class="status-header" id="statusHeader">
+                <div>
+                    <div class="status-title" id="statusTitle">Validação Concluída</div>
+                    <p style="color: var(--text-muted); margin-top: 4px;" id="statusSub">Verifique os apontamentos do manual abaixo.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalLines">0</div>
+                        <div class="stat-label">Linhas Lidas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalErrors" style="color: var(--danger);">0</div>
+                        <div class="stat-label">Ocorrências</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-list" id="errorList">
+                <!-- Erros via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const loader = document.getElementById('loader');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const dashboard = document.getElementById('dashboard');
+        const errorList = document.getElementById('errorList');
+        const statusHeader = document.getElementById('statusHeader');
+        const statusTitle = document.getElementById('statusTitle');
+
+        // Drag & Drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            let dt = e.dataTransfer;
+            let files = dt.files;
+            handleFiles(files);
+        });
+
+        fileInput.addEventListener('change', function() {
+            handleFiles(this.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length === 0) return;
+            const file = files[0];
+            
+            const reader = new FileReader();
+            
+            uploadBtn.style.display = 'none';
+            loader.style.display = 'block';
+            dashboard.style.display = 'none';
+
+            reader.onload = async function(e) {
+                const text = e.target.result;
+                try {
+                    const res = await fetch('/api/validar', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ conteudo: text })
+                    });
+                    
+                    const result = await res.json();
+                    
+                    if(res.ok) {
+                        dropZone.classList.add('compact');
+                        displayDashboard(result);
+                    } else {
+                        alert("Erro na API: " + result.erro);
+                    }
+                } catch (error) {
+                    alert("Erro de conexão na validação.");
+                } finally {
+                    loader.style.display = 'none';
+                    uploadBtn.style.display = 'block';
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function displayDashboard(data) {
+            dashboard.style.display = 'block';
+            document.getElementById('totalLines').innerText = data.total_linhas;
+            document.getElementById('totalErrors').innerText = data.ocorrencias.length;
+
+            if (data.sucesso) {
+                statusHeader.classList.remove('has-errors');
+                statusTitle.innerText = "Arquivo Aprovado! ✅";
+                statusTitle.style.color = "var(--success)";
+                errorList.innerHTML = `<div style="text-align: center; padding: 3rem; color: var(--success); font-size: 1.2rem;">
+                                        Nenhuma falha estrutural foi detectada perante as 83 Regras do Manual de Campinas.<br>O arquivo está pronto para importação!
+                                       </div>`;
+            } else {
+                statusHeader.classList.add('has-errors');
+                statusTitle.innerText = "Problemas Detectados ⚠️";
+                statusTitle.style.color = "var(--danger)";
+                
+                errorList.innerHTML = '';
+                data.ocorrencias.forEach(err => {
+                    const card = document.createElement('div');
+                    card.className = 'error-card';
+                    card.innerHTML = `
+                        <div class="error-badge">Linha ${err.linha}</div>
+                        <div class="error-details">
+                            <h3>Campo: ${err.campo}</h3>
+                            <p>${err.mensagem}</p>
+                            ${err.valor ? `<span class="err-val">Valor capturado: "${err.valor}"</span>` : ''}
+                        </div>
+                    `;
+                    errorList.appendChild(card);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
