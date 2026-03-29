@@ -1,0 +1,8 @@
+=== INICIANDO VALIDAÇÃO: teste_chapeco_valido.txt | CIDADE: Chapeco ===
+Log detalhado salvo em: teste_chapeco_valido.txt.log
+[LINHA 1] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 7 - Situação] [AVISO]: Mapeado automático de 'tt' para 't' | Valor: 'tt' | Regra: Desconformidade tolerada por município
+[LINHA 2] [CAMPO 7 - Situação] [AVISO]: Mapeado automático de 'tt' para 't' | Valor: 'tt' | Regra: Desconformidade tolerada por município
+
+[+] Validação concluída com SUCESSO. Apenas avisos, se houver.

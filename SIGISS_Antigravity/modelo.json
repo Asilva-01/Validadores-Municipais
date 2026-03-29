@@ -1,0 +1,18 @@
+{
+  "cidade": "Itapira",
+  "notas": [
+    {
+      "cpf_cnpj": "06012316000180",
+      "nf": "584",
+      "serie": "20",
+      "sub_serie": "",
+      "dia_emissao": "10",
+      "codigo_servico": "123",
+      "situacao": "r",
+      "valor": "39209,12",
+      "ccm_tomador": "00000000004471",
+      "tipo_nf": "E",
+      "aliquota": "0,0000"
+    }
+  ]
+}

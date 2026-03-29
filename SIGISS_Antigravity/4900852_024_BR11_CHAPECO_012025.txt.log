@@ -1,0 +1,16 @@
+=== INICIANDO VALIDAÇÃO: 4900852_024_BR11_CHAPECO_012025.txt | CIDADE: Chapeco ===
+Log detalhado salvo em: 4900852_024_BR11_CHAPECO_012025.txt.log
+[LINHA 1] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 1] [CAMPO 7 - Situação] [AVISO]: Mapeado automático de 'tt' para 't' | Valor: 'tt' | Regra: Desconformidade tolerada por município
+[LINHA 2] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 2] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 2] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 2] [CAMPO 7 - Situação] [AVISO]: Mapeado automático de 'tt' para 't' | Valor: 'tt' | Regra: Desconformidade tolerada por município
+[LINHA 3] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 3] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 3] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 3] [CAMPO 7 - Situação] [AVISO]: Mapeado automático de 'tt' para 't' | Valor: 'tt' | Regra: Desconformidade tolerada por município
+
+[!] Validação concluída com ERROS.

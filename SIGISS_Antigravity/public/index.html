@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Layout SIGISS</title>
+    <!-- Modern Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="header-glass">
+            <div class="logo-area">
+                <div class="shield-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                </div>
+                <h1>SIGISS <span class="highlight">Engine</span></h1>
+            </div>
+            <p>Ecossistema nativo de validação rigorosa de lotes</p>
+        </header>
+
+        <main class="main-content">
+            
+            <section class="controls-panel card-glass">
+                <div class="form-group">
+                    <label for="cidade-select">Município Configurado</label>
+                    <select id="cidade-select">
+                        <option value="Itapira" selected>Itapira - SP</option>
+                        <option value="Chapeco">Chapecó - SC</option>
+                        <option value="MogiMirim">Mogi Mirim - SP</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="upload-area card-glass" id="drop-zone">
+                <input type="file" id="file-input" accept=".txt,.csv" style="display:none">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    </div>
+                    <h2>Arraste o arquivo .txt aqui</h2>
+                    <p>ou <span class="browse-link" id="browse-btn">clique para buscar</span> no computador</p>
+                </div>
+            </section>
+
+            <section class="results-panel" id="results-panel" style="display: none;">
+                <div class="results-header">
+                    <h3>Resultados da Validação</h3>
+                    <div class="badges">
+                        <span class="badge badge-success" id="badge-sucesso" style="display:none">PASSOU</span>
+                        <span class="badge badge-error" id="badge-erro" style="display:none">FALHOU</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-label">Total Linhas</div>
+                        <div class="stat-value" id="stat-linhas">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Erros Críticos</div>
+                        <div class="stat-value error-text" id="stat-erros">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Avisos Relevados</div>
+                        <div class="stat-value warning-text" id="stat-avisos">0</div>
+                    </div>
+                </div>
+
+                <div class="log-container" id="log-container">
+                    <!-- Logs populated via JS -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

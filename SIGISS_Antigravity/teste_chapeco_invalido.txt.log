@@ -1,0 +1,18 @@
+=== INICIANDO VALIDAÇÃO: teste_chapeco_invalido.txt | CIDADE: Chapeco ===
+Log detalhado salvo em: teste_chapeco_invalido.txt.log
+[LINHA 1] [CAMPO 1 - CPF/CNPJ] [ERRO]: CNPJ inválido | Valor: '83411025000109' | Regra: 14 dígitos com DV válido
+[LINHA 1] [CAMPO 2 - Nº NF] [ERRO]: Numérico obrigatório | Valor: 'A00007962' | Regra: Apenas números
+[LINHA 1] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 5 - Dia Emissão] [ERRO]: Dia inválido | Valor: '60' | Regra: Entre 1 e 31
+[LINHA 1] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 1] [CAMPO 8 - Valor] [ERRO]: Uso de ponto como decimal | Valor: '29160.62' | Regra: Proibido ponto. Usar vírgula
+[LINHA 1] [CAMPO 9 - CCM Tomador] [ERRO]: Fora do padrão do município | Valor: 'O234' | Regra: Regex esperada: ^\d{5}$
+[LINHA 1] [CAMPO 10 - Tipo NF] [ERRO]: Inválido | Valor: 'Z' | Regra: Permitidos: T, F, J, R, E
+[LINHA 2] [CAMPO 1 - CPF/CNPJ] [ERRO]: CNPJ inválido | Valor: '8341102500010a' | Regra: 14 dígitos com DV válido
+[LINHA 2] [CAMPO 6 - Cód. Serviço] [ERRO]: Não numérico | Valor: 'COD' | Regra: Requer apenas dígitos
+[LINHA 2] [CAMPO 8 - Valor] [ERRO]: Uso de ponto como decimal | Valor: '9160.00' | Regra: Proibido ponto. Usar vírgula
+[LINHA 2] [CAMPO 9 - CCM Tomador] [ERRO]: Fora do padrão do município | Valor: '2342' | Regra: Regex esperada: ^\d{5}$
+[LINHA 2] [CAMPO 11 - Alíquota Simples] [ERRO]: Uso de ponto como decimal | Valor: '0.00' | Regra: Proibido ponto. Usar vírgula
+
+[!] Validação concluída com ERROS.

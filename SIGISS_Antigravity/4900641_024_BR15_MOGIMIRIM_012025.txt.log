@@ -1,0 +1,24 @@
+=== INICIANDO VALIDAÇÃO: 4900641_024_BR15_MOGIMIRIM_012025.txt | CIDADE: MogiMirim ===
+Log detalhado salvo em: 4900641_024_BR15_MOGIMIRIM_012025.txt.log
+[LINHA 1] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 1] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 1] [CAMPO 10 - Tipo NF] [AVISO]: Mapeado automático de '' para 'E' | Valor: '' | Regra: Desconformidade tolerada por município
+[LINHA 2] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 2] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 2] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 2] [CAMPO 10 - Tipo NF] [AVISO]: Mapeado automático de '' para 'E' | Valor: '' | Regra: Desconformidade tolerada por município
+[LINHA 3] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 3] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 3] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 3] [CAMPO 10 - Tipo NF] [AVISO]: Mapeado automático de '' para 'E' | Valor: '' | Regra: Desconformidade tolerada por município
+[LINHA 4] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 4] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 4] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 4] [CAMPO 10 - Tipo NF] [AVISO]: Mapeado automático de '' para 'E' | Valor: '' | Regra: Desconformidade tolerada por município
+[LINHA 5] [CAMPO 3 - Série] [AVISO]: Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 5] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 5] [CAMPO 6 - Cód. Serviço] [ERRO]: Vazio ou ausente | Valor: '' | Regra: Obrigatório (Dígitos)
+[LINHA 5] [CAMPO 10 - Tipo NF] [AVISO]: Mapeado automático de '' para 'E' | Valor: '' | Regra: Desconformidade tolerada por município
+
+[!] Validação concluída com ERROS.

@@ -1,0 +1,28 @@
+{
+  "Itapira": {
+    "uf": "SP",
+    "delimitador": "\t",
+    "encoding": "utf-8",
+    "ccm_regex": "^\\d{14}$",
+    "map_situacao_aviso": {}
+  },
+  "Chapeco": {
+    "uf": "SC",
+    "delimitador": "\t",
+    "encoding": "utf-8",
+    "ccm_regex": "^\\d{5}$",
+    "map_situacao_aviso": {
+      "tt": "t"
+    }
+  },
+  "MogiMirim": {
+    "uf": "SP",
+    "delimitador": "\t",
+    "encoding": "utf-8",
+    "ccm_regex": "^\\d{14}$",
+    "map_situacao_aviso": {},
+    "map_tipo_aviso": {
+      "": "E"
+    }
+  }
+}

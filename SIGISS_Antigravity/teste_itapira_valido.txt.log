@@ -1,0 +1,6 @@
+=== INICIANDO VALIDAÇÃO: teste_itapira_valido.txt | CIDADE: Itapira ===
+Log detalhado salvo em: teste_itapira_valido.txt.log
+[LINHA 1] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+[LINHA 2] [CAMPO 4 - Sub-Série] [AVISO]: Sub-Série vazia | Valor: '' | Regra: Opcional mas recomendado
+
+[+] Validação concluída com SUCESSO. Apenas avisos, se houver.
