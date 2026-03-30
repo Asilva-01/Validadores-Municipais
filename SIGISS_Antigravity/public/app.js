@@ -91,16 +91,36 @@ document.addEventListener('DOMContentLoaded', () => {
             progressFill.style.width = '100%';
             progressFill.style.background = 'var(--error-red)';
             badgeErro.style.display = 'inline-flex';
-            badgeErro.textContent = 'ERRO DE SISTEMA';
-            
+
             logContainer.innerHTML = '';
-            appendLog({ 
-                nivel: 'ERRO', 
-                campo: 'Sistema', 
-                mensagem: error.message, 
-                valor: fileName, 
-                regra: 'Comunicação API' 
-            }, 0);
+
+            const isNetworkError = error instanceof TypeError && (
+                error.message === 'Failed to fetch' ||
+                error.message.includes('NetworkError') ||
+                error.message.includes('fetch')
+            );
+
+            if (isNetworkError) {
+                badgeErro.textContent = 'SERVIDOR OFFLINE';
+                appendLog({
+                    nivel: 'ERRO',
+                    linha: '—',
+                    campo: 'Conexão',
+                    mensagem: 'Não foi possível conectar ao servidor de validação. Certifique-se de que o servidor Python está em execução.',
+                    valor: 'Execute: python web_server.py',
+                    regra: 'Acesse a URL impressa no terminal (ex: http://localhost:PORTA)'
+                });
+            } else {
+                badgeErro.textContent = 'ERRO DE API';
+                appendLog({
+                    nivel: 'ERRO',
+                    linha: '—',
+                    campo: 'API /validar',
+                    mensagem: error.message,
+                    valor: fileName,
+                    regra: 'Comunicação API'
+                });
+            }
         }
     }
 
@@ -145,14 +165,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const isError = log.nivel === 'ERRO';
         const entry = document.createElement('div');
         entry.className = `log-entry ${isError ? 'log-error' : 'log-warn'}`;
-        
+
+        const linhaLabel = log.linha != null ? `L${log.linha}` : '—';
+
         entry.innerHTML = `
             <div class="log-meta">
-                <span class="bag-linha">L${log.linha}</span>
+                <span class="bag-linha">${linhaLabel}</span>
                 <span class="bag-campo">${log.campo}</span>
             </div>
             <div class="log-msg">${log.mensagem}</div>
-            <div class="log-detail"><strong>Causa:</strong> valor '${log.valor}' violou [${log.regra}]</div>
+            <div class="log-detail"><strong>Detalhe:</strong> ${log.valor} &nbsp;|&nbsp; <em>${log.regra}</em></div>
         `;
         logContainer.appendChild(entry);
     }
